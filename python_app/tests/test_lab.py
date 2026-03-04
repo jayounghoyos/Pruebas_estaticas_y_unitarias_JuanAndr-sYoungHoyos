@@ -5,37 +5,37 @@
 # - suma(2,3) -> 5; suma(0,5) -> 5; suma(-2,3) -> 1
 
 from palindromo import es_palindromo
-from utils import suma
 
-def palindromo_radar():
+
+def test_palindromo_radar():
 
     """
     Prueba la función es_palindromo con varios casos de prueba."""
-    assert es_palindromo("radar") == True
+    assert es_palindromo("radar")
 
 
-def palindromo_Radar():
+def test_palindromo_Radar():
 
     """
     Radar"""
-    assert es_palindromo("Radar") == True
+    assert es_palindromo("Radar")
 
 
-def palindromo_anita_lava_la_tina():
+def test_palindromo_anita_lava_la_tina():
 
     """Anita"""
-    assert es_palindromo("anita lava la tina") == True
+    assert es_palindromo("anita lava la tina")
 
-def palindromo_python():
+def test_palindromo_python():
 
     """
     Python"""
-    assert es_palindromo("python") == False
+    assert es_palindromo("python")
 
-def palindromo_cadena_vacia():
+def test_palindromo_cadena_vacia():
 
     """Cadena vacía"""
-    assert es_palindromo("") == True
+    assert es_palindromo("")
 
 
 
