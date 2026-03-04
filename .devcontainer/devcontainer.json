@@ -1,0 +1,15 @@
+{
+  "name": "Multi-language Quality Lab",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "postCreateCommand": "pipx install ruff || pip install ruff && pip install -r python_app/requirements.txt && cd js_app && npm install && cd ../ts_app && npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "js_app",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0"
+  }
+}
