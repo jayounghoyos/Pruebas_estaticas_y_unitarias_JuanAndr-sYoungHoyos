@@ -1,14 +1,7 @@
 
 # Laboratorio: Pruebas estáticas y unitarias (Python + JavaScript)
 
-**Objetivo (45 minutos):** ejecutar análisis estático y escribir/aplicar pruebas unitarias en dos lenguajes (Python y JavaScript) dentro de **GitHub Codespaces**, sobre un proyecto que **funciona**, pero contiene **issues intencionales** detectables por linters.
-
-## 🚀 Pasos rápidos
-
-1) **Abrir en Codespaces** (sube este proyecto a tu repo y abre un Codespace).  
-2) Espera a que termine la configuración inicial (instalación automática de dependencias).  
-3) En la terminal, ejecuta:
-
+# Juan Andréss Young Hoyos
 ### Python
 ```bash
 # entrar a la carpeta de Python
