@@ -103,74 +103,109 @@ tests/test_sumas.py::test_3 PASSED                                              
 
 ## 6. Ejecución en JavaScript (Node + Jest + ESLint)
 
-### Análisis estático (ESLint)
+### Análisis estático (ESLint) — errores iniciales
 
 ```console
- js_app ⚡ main ◉
 > npm run lint
 
 > js_app@1.0.0 lint
 > eslint src
 
-
-/home/jayoungh/SextoSemestre/pruebasDeSoftware/multilanguage-quality-lab-ts/js_app/src/stringUtils.js
+/js_app/src/stringUtils.js
    6:3   error    Unexpected var, use let or const instead       no-var
    6:7   warning  'original' is assigned a value but never used  no-unused-vars
    9:15  error    Expected '===' and instead saw '=='            eqeqeq
   14:3   warning  Unreachable code                               no-unreachable
 
 ✖ 4 problems (2 errors, 2 warnings)
-  1 error and 0 warnings potentially fixable with the `--fix` option.
+```
+
+### Análisis estático (ESLint) — después de correcciones
+
+```console
+> npm run lint
+
+> js_app@1.0.0 lint
+> eslint src
+
+(sin errores)
 ```
 
 ### Pruebas unitarias (Jest) — `isPalindrome`
 
 ```console
- js_app ⚡ main ◉
 > npm test -- --watchAll=false
 
 > js_app@1.0.0 test
 > jest --passWithNoTests --watchAll=false
 
- PASS  tests/stringUtils.test.js
-  ✓ ejemplo siembra (5 ms)
-  ✓ esPalindrome con "radar" (1 ms)
-  ✓ esPalindrome con "anita lava la tina" (1 ms)
-  ✓ esPalindrome con "python" (1 ms)
-  ✓ esPalindrome con cadena vacía (1 ms)
-  ✓ esPalindrome con "Radar"
+PASS tests/stringUtils.test.js
+PASS tests/intSumas.test.js
 
-Test Suites: 1 passed, 1 total
-Tests:       6 passed, 6 total
+Test Suites: 2 passed, 2 total
+Tests:       1 todo, 6 passed, 7 total
 Snapshots:   0 total
-Time:        0.894 s
+Time:        0.136 s
 Ran all test suites.
-```
-
-### Pruebas unitarias (Jest) — `suma`
-
-```console
-
 ```
 
 ---
 
 ## 7. Ejecución en TypeScript (tsc + Vitest + ESLint)
 
-### Lint para TS (ESLint)
+### Lint para TS (ESLint) — errores iniciales
 
 ```console
+> npm run lint
 
+> ts_app@1.0.0 lint
+> eslint src --ext .ts
+
+/ts_app/src/stringUtils.ts
+   6:7   warning  'original' is assigned a value but never used        @typescript-eslint/no-unused-vars
+   6:7   error    'original' is never reassigned. Use 'const' instead  prefer-const
+   8:15  error    Expected '===' and instead saw '=='                  eqeqeq
+  13:3   warning  Unreachable code                                     no-unreachable
+
+✖ 4 problems (2 errors, 2 warnings)
+```
+
+### Lint para TS (ESLint) — después de correcciones
+
+```console
+> npm run lint
+
+> ts_app@1.0.0 lint
+> eslint src --ext .ts
+
+(sin errores)
 ```
 
 ### Type-check estricto (tsc)
 
 ```console
+> npm run typecheck
 
+> ts_app@1.0.0 typecheck
+> tsc --noEmit
+
+(sin errores)
 ```
 
 ### Pruebas unitarias (Vitest) — `isPalindrome`
 
 ```console
+> npm test
 
+> ts_app@1.0.0 test
+> vitest run
+
+ RUN  v1.6.1 /ts_app
+
+ ✓ tests/stringUtils.test.ts  (5 tests) 1ms
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  21:34:47
+   Duration  276ms
 ```
