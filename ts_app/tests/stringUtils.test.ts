@@ -2,10 +2,24 @@
 import { describe, it, expect } from 'vitest'
 import { isPalindrome } from '../src/stringUtils'
 
-// TODO: completa los casos: "radar"->true, "anita lava la tina"->true, "python"->false, ""->true, "Radar"->true
+describe('isPalindrome', () => {
+  it('radar es palíndromo', () => {
+    expect(isPalindrome('radar')).toBe(true)
+  })
 
-describe('siembra', () => {
-  it('ejemplo', () => {
-    expect(true).toBe(true)
+  it('Radar es palíndromo (ignora mayúsculas)', () => {
+    expect(isPalindrome('Radar')).toBe(true)
+  })
+
+  it('anita lava la tina es palíndromo (ignora espacios)', () => {
+    expect(isPalindrome('anita lava la tina')).toBe(true)
+  })
+
+  it('python no es palíndromo', () => {
+    expect(isPalindrome('python')).toBe(false)
+  })
+
+  it('cadena vacía es palíndromo', () => {
+    expect(isPalindrome('')).toBe(true)
   })
 })
